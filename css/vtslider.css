@@ -35,6 +35,7 @@
     width: 100%;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	line-height:20px;
 }
 #vtslider .vts_slider  .vts_slide  .vts_img_desp a{
 	color:#fff;
@@ -52,6 +53,7 @@
 	z-index:999;
 	overflow: hidden;
 	float: left;
+	overflow: auto;
 }
 #vtslider .vts_accordion .vts_header {
     background: none repeat scroll 0 0 #E6E6E6;

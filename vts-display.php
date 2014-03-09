@@ -60,7 +60,11 @@ function vtslider_display() {
 	$imgwidth     = ($imgwidth) ? $imgwidth : "500";
 	$imgheight    = ($imgheight) ? $imgheight : "333";
 	$sidebarwidth = ($sidebarwidth) ? $sidebarwidth : "200";
-	$sliderTotalWidth = $imgwidth + $sidebarwidth;
+	$sliderTotalWidth    = $imgwidth + $sidebarwidth;
+	$sliderTotalWidthBdr = $sliderTotalWidth + $sliderborder + 50;
+	$pixelVal    = $sliderTotalWidth / 100;
+	$imgwdthprct = $imgwidth / $pixelVal;
+	$sdrwdthprct = $sidebarwidth / $pixelVal;
 	?>
 	
 	<!-- Vertical Tab Slider <?php if (function_exists('vts_plugin_version')) { echo vts_plugin_version(); } ?> Starts Here -->
@@ -84,17 +88,61 @@ function vtslider_display() {
 			jQuery("#vtslider .vts_accordion .vts_header").each(function(){
 				HeadtotalHeight = HeadtotalHeight + jQuery(this).outerHeight();
 			});
-			
+		
 			ConttotalHeight = SliderHeight - HeadtotalHeight;
+			if(ConttotalHeight < 0) { ConttotalHeight = SliderHeight; }
+			
 			jQuery("#vtslider .vts_accordion .vts_content").css({'max-height':ConttotalHeight});
 
+			if(jQuery(window).width() < <?php echo $sliderTotalWidthBdr; ?>) {
+				var ht = jQuery('#vtslider .vts_slider > .vts_slide img').height();
+				jQuery('#vtslider .vts_slider,.vts_accordion').css('height',ht);
+			}else{
+				jQuery('#vtslider .vts_slider,.vts_accordion').css('height','');
+			}
 		});
+		
+		jQuery(window).resize(function(){
+			if(jQuery(window).width() < <?php echo $sliderTotalWidthBdr; ?>) {
+				var ht = jQuery('#vtslider .vts_slider > .vts_slide img').height();
+				jQuery('#vtslider .vts_slider,.vts_accordion').css('height',ht);
+			}else{
+				jQuery('#vtslider .vts_slider,.vts_accordion').css('height','');
+			}
+		});
+		
 	</script>
 	
 	<style type="text/css">
 		#vtslider { width:<?php echo $sliderTotalWidth.'px'; ?>;height: <?php echo $imgheight.'px'; ?>;border:<?php echo $sliderborder.'px'; ?> solid <?php echo $sliderbdrclr;  ?>}
 		#vtslider .vts_slider,#vtslider .vts_slider .vts_slide img { width: <?php echo $imgwidth.'px'; ?>;height: <?php echo $imgheight.'px'; ?>}
 		#vtslider .vts_accordion { width: <?php echo $sidebarwidth.'px'; ?>;height: <?php echo $imgheight.'px'; ?>}
+	
+		/* Max width in pixels.*/
+		@media screen and (max-width: <?php echo $sliderTotalWidthBdr; ?>px) {
+			#vtslider {height:auto;width:100%;}
+			
+			#vtslider,#vtslider .vts_slider,#vtslider .vts_accordion{-moz-box-sizing: border-box;box-sizing: border-box;}
+
+			#vtslider .vts_slider {width:<?php echo $imgwdthprct; ?>%;}
+			#vtslider .vts_accordion {width:<?php echo $sdrwdthprct; ?>%;}
+			
+			#vtslider .vts_slider .vts_slide img { 
+				max-width:100% !important;
+				height:auto;
+				display:block;
+				width: 100%;
+			}
+		}
+		/* Max width in pixels.*/
+		@media screen and (max-width: 550px) {
+			#vtslider,#vtslider .vts_slider,#vtslider .vts_accordion{width:100%; -moz-box-sizing: border-box;box-sizing: border-box;}
+			#vtslider .vts_accordion {display:none;}
+			#vtslider .vts_slider .vts_slide .vts_img_desp a {
+				font-size: 12px;
+				line-height: 18px;
+			}
+		}
 	</style>
 	
 	<div id="vtslider" class="vtslider">
@@ -114,6 +162,7 @@ function vtslider_display() {
 			<?php if($tab5title){ ?><div class="vts_header"><?php echo stripslashes($tab5title); ?></div><div class="vts_content"><?php if($tab5desp){ ?><div class="vts_cont-inner"><?php echo stripslashes($tab5desp); ?></div><?php } ?></div><?php } ?>
 		</div>
 		<div class="slidorion_clear"></div>
+		<a title="WPTreasure.com" href="http://wptreasure.com/downloads/vertical-tab-slider/?utm_refs=<?php echo $_SERVER['SERVER_NAME']; ?>" target="_blank" style="display:block !important;visibility:visible !important;text-indent:0 !important;background: none repeat scroll 0 0 #FFFFFF !important; bottom: -26px !important; color: #888888 !important;font-family: tahoma; font-size: 9px !important; height: auto !important; left: -10px !important; line-height: 10px !important; padding: 2px !important; position: absolute !important; text-decoration: none;outline:none"><?php _e('VTS') ?></a> 	
 	</div>
 	<!-- Vertical Tab Slider <?php if (function_exists('vts_plugin_version')) { echo vts_plugin_version(); } ?> Ends Here -->
 	<?php

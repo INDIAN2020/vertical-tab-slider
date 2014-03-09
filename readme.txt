@@ -4,7 +4,7 @@ Donate link: http://wptreasure.com/
 Tags: vertical tab slider, content slider, slider, image slider, text slider, tab slider, accordian slider, accordian, image rotator, image cycle, content rotator 
 Requires at least: 3.0
 Tested up to: 3.8.1
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,7 +50,14 @@ Enjoy it......
 
 == Changelog ==
 
+=Version 1.1.0=
+
+* Added Responsive Functionality
+
+=Version 1.0.0=
+
 * Initial Release
+
 
 == Upgrade notice ==
 
