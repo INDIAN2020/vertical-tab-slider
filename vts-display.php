@@ -162,7 +162,6 @@ function vtslider_display() {
 			<?php if($tab5title){ ?><div class="vts_header"><?php echo stripslashes($tab5title); ?></div><div class="vts_content"><?php if($tab5desp){ ?><div class="vts_cont-inner"><?php echo stripslashes($tab5desp); ?></div><?php } ?></div><?php } ?>
 		</div>
 		<div class="slidorion_clear"></div>
-		<a title="WPTreasure.com" href="http://wptreasure.com/downloads/vertical-tab-slider/?utm_refs=<?php echo $_SERVER['SERVER_NAME']; ?>" target="_blank" style="display:block !important;visibility:visible !important;text-indent:0 !important;background: none repeat scroll 0 0 #FFFFFF !important; bottom: -26px !important; color: #888888 !important;font-family: tahoma; font-size: 9px !important; height: auto !important; left: -10px !important; line-height: 10px !important; padding: 2px !important; position: absolute !important; text-decoration: none;outline:none"><?php _e('VTS') ?></a> 	
 	</div>
 	<!-- Vertical Tab Slider <?php if (function_exists('vts_plugin_version')) { echo vts_plugin_version(); } ?> Ends Here -->
 	<?php
