@@ -3,8 +3,8 @@ Contributors: wptreasure
 Donate link: http://wptreasure.com/
 Tags: vertical tab slider, content slider, slider, image slider, text slider, tab slider, accordian slider, accordian, image rotator, image cycle, content rotator 
 Requires at least: 3.0
-Tested up to: 3.9
-Stable tag: 1.1.2
+Tested up to: 3.9.2
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,11 @@ Enjoy it......
 2. Frontend display.
 
 == Changelog ==
+
+=Version 1.2.2=
+
+* Added enable/disable link over image option in admin settings.
+* Addded link target option in admin settings.
 
 =Version 1.1.2=
 

@@ -4,7 +4,7 @@ Plugin Name: Vertical Tab Slider
 Plugin URI: http://wptreasure.com/downloads/vertical-tab-slider/
 Description: A very attractive and cool looking tabbing slider which gives a user to rotate their images and description in slides with great effect.
 Author: wptreasure
-Version: 1.1.2
+Version: 1.2.2
 Author URI: http://wptreasure.com/
 */
 // -----------------------------------------------------------------
@@ -64,6 +64,8 @@ function vts_defaults(){
 		'navigation' => 1,
 		'effect'     => 'fade',
 		'pausehover' => 1,
+		'imagelink'  => 0,
+		'linktarget' => '_self',
 		'timedelay'  => '5000',
 		'transpeed'  => '500',
 		'image1url'  =>  plugins_url('images/1.jpg',__FILE__),

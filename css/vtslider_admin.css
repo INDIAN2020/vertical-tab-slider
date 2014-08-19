@@ -8,5 +8,5 @@
 #vts_admin table textarea{width: 230px;}
 #vts_admin input[type="submit"]{margin-top:10px;}
 #vts_admin select{width:95px;}
-
+#vts_admin  .wpt_iframe{left: 750px; position: fixed; top: 100px; width: 450px;outline:none;} 
 

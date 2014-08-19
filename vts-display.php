@@ -16,6 +16,13 @@ function vtslider_display() {
 	$navigation =  $options['navigation'];
 	$effect     =  $options['effect'];    
 	$pausehover =  $options['pausehover'];
+	
+	$imagelink  =  $options['imagelink'];
+	$linktarget =  $options['linktarget'];
+	
+	$imagelink  = (isset($imagelink) && $imagelink) ? $imagelink : 0;
+	$linktarget = (isset($linktarget) && $linktarget !="") ? $linktarget : '_self';
+	
 	$timedelay	=  $options['timedelay']; 
 	$transpeed	=  $options['transpeed'];
 	
@@ -147,11 +154,11 @@ function vtslider_display() {
 	
 	<div id="vtslider" class="vtslider">
 		<div class="vts_slider">
-			<?php if($image1url && $tab1title){ ?><div class="vts_slide"><img src="<?php echo $image1url; ?>" /><?php if($image1desp) { ?><div class="vts_img_desp"><a <?php if($image1link) { echo 'href="'.$image1link.'"'; } ?>><?php echo stripslashes($image1desp); ?></a></div><?php } ?></div><?php } ?>
-			<?php if($image2url && $tab2title){ ?><div class="vts_slide"><img src="<?php echo $image2url; ?>" /><?php if($image2desp) { ?><div class="vts_img_desp"><a <?php if($image2link) { echo 'href="'.$image2link.'"'; } ?>><?php echo stripslashes($image2desp); ?></a></div><?php } ?></div><?php } ?>
-			<?php if($image3url && $tab3title){ ?><div class="vts_slide"><img src="<?php echo $image3url; ?>" /><?php if($image3desp) { ?><div class="vts_img_desp"><a <?php if($image3link) { echo 'href="'.$image3link.'"'; } ?>><?php echo stripslashes($image3desp); ?></a></div><?php } ?></div><?php } ?>
-			<?php if($image4url && $tab4title){ ?><div class="vts_slide"><img src="<?php echo $image4url; ?>" /><?php if($image4desp) { ?><div class="vts_img_desp"><a <?php if($image4link) { echo 'href="'.$image4link.'"'; } ?>><?php echo stripslashes($image4desp); ?></a></div><?php } ?></div><?php } ?>
-			<?php if($image5url && $tab5title){ ?><div class="vts_slide"><img src="<?php echo $image5url; ?>" /><?php if($image5desp) { ?><div class="vts_img_desp"><a <?php if($image5link) { echo 'href="'.$image5link.'"'; } ?>><?php echo stripslashes($image5desp); ?></a></div><?php } ?></div><?php } ?>
+			<?php if($image1url && $tab1title){ ?><div class="vts_slide"><a target="<?php echo $linktarget; ?>" <?php if($image1link && $imagelink) { echo 'href="'.$image1link.'"'; } ?>><img src="<?php echo $image1url; ?>" /></a><?php if($image1desp) { ?><div class="vts_img_desp"><a target="<?php echo $linktarget; ?>" <?php if($image1link) { echo 'href="'.$image1link.'"'; } ?>><?php echo stripslashes($image1desp); ?></a></div><?php } ?></div><?php } ?>
+			<?php if($image2url && $tab2title){ ?><div class="vts_slide"><a target="<?php echo $linktarget; ?>" <?php if($image2link && $imagelink) { echo 'href="'.$image2link.'"'; } ?>><img src="<?php echo $image2url; ?>" /></a><?php if($image2desp) { ?><div class="vts_img_desp"><a target="<?php echo $linktarget; ?>" <?php if($image2link) { echo 'href="'.$image2link.'"'; } ?>><?php echo stripslashes($image2desp); ?></a></div><?php } ?></div><?php } ?>
+			<?php if($image3url && $tab3title){ ?><div class="vts_slide"><a target="<?php echo $linktarget; ?>" <?php if($image3link && $imagelink) { echo 'href="'.$image3link.'"'; } ?>><img src="<?php echo $image3url; ?>" /></a><?php if($image3desp) { ?><div class="vts_img_desp"><a target="<?php echo $linktarget; ?>" <?php if($image3link) { echo 'href="'.$image3link.'"'; } ?>><?php echo stripslashes($image3desp); ?></a></div><?php } ?></div><?php } ?>
+			<?php if($image4url && $tab4title){ ?><div class="vts_slide"><a target="<?php echo $linktarget; ?>" <?php if($image4link && $imagelink) { echo 'href="'.$image4link.'"'; } ?>><img src="<?php echo $image4url; ?>" /></a><?php if($image4desp) { ?><div class="vts_img_desp"><a target="<?php echo $linktarget; ?>" <?php if($image4link) { echo 'href="'.$image4link.'"'; } ?>><?php echo stripslashes($image4desp); ?></a></div><?php } ?></div><?php } ?>
+			<?php if($image5url && $tab5title){ ?><div class="vts_slide"><a target="<?php echo $linktarget; ?>" <?php if($image5link && $imagelink) { echo 'href="'.$image5link.'"'; } ?>><img src="<?php echo $image5url; ?>" /></a><?php if($image5desp) { ?><div class="vts_img_desp"><a target="<?php echo $linktarget; ?>" <?php if($image5link) { echo 'href="'.$image5link.'"'; } ?>><?php echo stripslashes($image5desp); ?></a></div><?php } ?></div><?php } ?>
 		</div>
 
 		<div class="vts_accordion">

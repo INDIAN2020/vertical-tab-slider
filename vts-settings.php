@@ -10,8 +10,9 @@ function vts_backend_menu()
 	</div>
 
 	<div id="poststuff" style="position:relative;">
-	
+
 		<div class="postbox" id="vts_admin">
+		<iframe class="wpt_iframe" src="http://www.wptreasure.com/iframes/vts-lite/iframe.php" width="100%" height="350px" scrolling="no" ></iframe> 
 		
 			<div class="handlediv" title="Click to toggle"><br/></div>
 			<h3 class="hndle"><span><?php _e("Slider Settings",'vtslider'); ?></span></h3>
@@ -87,6 +88,26 @@ function vts_backend_menu()
 								<select name="vts_options[pausehover]">
 									<option value="1" <?php selected('1', $options['pausehover']); ?>><?php _e('Yes','vtslider'); ?></option>
 									<option value="0" <?php selected('0', $options['pausehover']); ?>><?php _e('No','vtslider'); ?></option>
+								</select>
+							</td>
+						</tr>
+						
+						<tr>
+							<td><?php _e("Add Link over Image",'vtslider'); ?> :</td>
+							<td>
+								<select name="vts_options[imagelink]">
+									<option value="1" <?php selected('1', $options['imagelink']); ?>><?php _e('Enable','vtslider'); ?></option>
+									<option value="0" <?php selected('0', $options['imagelink']); ?>><?php _e('Disable','vtslider'); ?></option>
+								</select>
+							</td>
+						</tr>
+						
+						<tr>
+							<td><?php _e("Link Target",'vtslider'); ?> :</td>
+							<td>
+								<select name="vts_options[linktarget]">
+									<option value="_blank" <?php selected('_blank', $options['linktarget']); ?>><?php _e('_blank','vtslider'); ?></option>
+									<option value="_self" <?php selected('_self', $options['linktarget']); ?>><?php _e('_self','vtslider'); ?></option>
 								</select>
 							</td>
 						</tr>
